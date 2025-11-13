@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Performance Report</title>
+    <title>Relatório de Performance do Portfólio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         * {
@@ -145,27 +145,27 @@
 </head>
 <body>
     <div class="container">
-        <h1>Long Only Portfolio</h1>
-        <div class="subtitle">Out-of-Sample Backtest Results</div>
+        <h1>Portfólio Long Only</h1>
+        <div class="subtitle">Resultados de Backtest Out-of-Sample</div>
 
         <!-- Key Performance Metrics -->
         <div class="section">
-            <div class="section-title">I. Risk-Adjusted Performance Metrics</div>
+            <div class="section-title">I. Métricas de Risco e Retorno Ajustado</div>
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-label">Sharpe Ratio</div>
                     <div class="metric-value">3.32</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Maximum Drawdown</div>
+                    <div class="metric-label">Máximo Drawdown</div>
                     <div class="metric-value negative">-6.0%</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Cumulative Return</div>
+                    <div class="metric-label">Retorno Acumulado</div>
                     <div class="metric-value positive">+50.9%</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Annualized Volatility</div>
+                    <div class="metric-label">Volatilidade Anualizada</div>
                     <div class="metric-value">13.2%</div>
                 </div>
             </div>
@@ -173,7 +173,7 @@
 
         <!-- Performance Chart -->
         <div class="section">
-            <div class="section-title">II. Cumulative Performance vs Benchmarks</div>
+            <div class="section-title">II. Performance Acumulada vs Benchmarks</div>
             <div class="chart-container">
                 <canvas id="performanceChart"></canvas>
             </div>
@@ -181,14 +181,14 @@
 
         <!-- CAPM Analysis -->
         <div class="section">
-            <div class="section-title">III. Factor Analysis</div>
+            <div class="section-title">III. Análise Fatorial</div>
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-label">Beta (vs IBOV)</div>
                     <div class="metric-value">-0.07</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Alpha (Annualized)</div>
+                    <div class="metric-label">Alpha (Anualizado)</div>
                     <div class="metric-value positive">+24.6%</div>
                 </div>
                 <div class="metric-card">
@@ -205,20 +205,20 @@
 
         <!-- Performance Summary Table -->
         <div class="section">
-            <div class="section-title">IV. Comparative Performance Summary</div>
+            <div class="section-title">IV. Sumário Comparativo de Performance</div>
             <table>
                 <thead>
                     <tr>
-                        <th>Strategy</th>
-                        <th>Cumulative Return</th>
-                        <th>Annualized Return</th>
-                        <th>Volatility</th>
+                        <th>Estratégia</th>
+                        <th>Retorno Acumulado</th>
+                        <th>Retorno Anualizado</th>
+                        <th>Volatilidade</th>
                         <th>Sharpe Ratio</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Portfolio (Modelo)</strong></td>
+                        <td><strong>Portfólio (Modelo)</strong></td>
                         <td>+50.9%</td>
                         <td>+43.9%</td>
                         <td>13.2%</td>
@@ -244,70 +244,107 @@
 
         <!-- Drawdown Chart -->
         <div class="section">
-            <div class="section-title">V. Drawdown Analysis</div>
+            <div class="section-title">V. Análise de Drawdown</div>
             <div class="chart-container">
                 <canvas id="drawdownChart"></canvas>
             </div>
         </div>
+
         <!-- Strategy Analysis -->
         <div class="section">
-            <div class="section-title">VI. Strategy Methodology</div>
+            <div class="section-title">VI. Metodologia da Estratégia</div>
             
             <p style="margin-bottom: 1.5rem; text-align: justify; line-height: 1.8;">
-                The strategy is based on a Machine Learning–driven Alpha Research model that assigns buy or sell signals to the most liquid stocks in the Brazilian equity market.
-The model integrates momentum, risk, oscillator, mean-reversion, and price convergence indicators to predict price movements.
-            </p>
+                A estratégia é baseada em um modelo de Alpha Research guiado por Machine Learning que atribui sinais de compra ou venda para as ações mais líquidas de determinado dia do mercado acionário brasileiro.
+                O modelo integra indicadores de momentum, risco, osciladores, reversão à média e convergência para prever movimentos de preço.
+                
+                O processo de Otimização de Portfólio impõe uma alocação mínima de 67% em ações devido ao enquadramento de renda variável.
 
-         <!-- Strategy Analysis -->
-        <div class="section">
-            <div class="section-title">VI. Strategy Methodology</div>
-            
-            <p style="margin-bottom: 1.5rem; text-align: justify; line-height: 1.8;">
-                The strategy consists of a <strong>Machine Learning Alpha Research model</strong> that assigns buy or sell signals 
-                to top liquidity stocks in the Brazilian Market. The Alpha Research model leverages a series of momentum, risk, 
-                oscillators, mean reversion indicators, and price convergence indicators.
             </p>
 
             <div class="strategy-box">
-                <strong style="display: block; margin-bottom: 1rem;">Two-Stage Process:</strong>
+                <strong style="display: block; margin-bottom: 1rem;">Processo em Duas Etapas:</strong>
                 
                 <div class="strategy-step">
-                    <strong>1. Alpha Research (Signal Generation)</strong><br>
+                    <strong>1. Alpha Research (Geração de Sinais)</strong><br>
                     <span style="margin-left: 1.5rem; display: block; margin-top: 0.5rem; text-align: justify;">
-                        A supervised ML model analyzes a set of technical and statistical features across high-liquidity Brazilian stocks to generate directional (buy/sell) signals.
+                        Um modelo supervisionado de ML analisa um conjunto de características técnicas e estatísticas em ações de alta liquidez para gerar sinais direcionais (compra/venda).
                     </span>
                 </div>
                 
                 <div class="strategy-step">
-                    <strong>2. Portfolio Optimization (Weight Allocation)</strong><br>
+                    <strong>2. Otimização do Portfólio (Alocação de Pesos)</strong><br>
                     <span style="margin-left: 1.5rem; display: block; margin-top: 0.5rem; text-align: justify;">
-                        Daily portfolio weights are treated as hyperparameters and optimized through Sharpe ratio maximization. 
-                        To explore the weight space efficiently, an Tree-structured Parzen Estimator sampler is employed, while an L2 regularization term penalizes low-impact allocations and promotes parsimony in the final portfolio. 
-                        This ensures that the model's results are robust.
+                        Os pesos diários do portfólio são tratados como hiperparâmetros e otimizados pela maximização do Sharpe Ratio.
+                        Para explorar o espaço de pesos de forma eficiente, é utilizado um sampler Tree-structured Parzen Estimator (TPE), enquanto uma regularização L2 penaliza alocações de baixo impacto e promove parcimônia na carteira final.
                     </span>
                     <span style="margin-left: 1.5rem; display: block; margin-top: 0.75rem; text-align: justify;">
-                        This approach is more robust than the traditional Markowitz method. Markowitz optimization depends heavily on estimates of expected returns and the covariance matrix. In practice, these estimates are noisy and can change quickly, which often leads Markowitz to produce unstable or extreme weights. It can also struggle when assets are highly correlated, because the covariance matrix becomes difficult to invert.
+                        Essa abordagem é mais robusta do que o método tradicional de Markowitz, que depende fortemente de estimativas de retornos esperados e da matriz de covariância, ambas suscetíveis a ruído e instabilidade.
                     </span>
                     <span style="margin-left: 1.5rem; display: block; margin-top: 0.75rem; text-align: justify;">
-                        The TPE sampler avoids these issues by not relying on direct matrix inversion or precise expected-return estimates. Instead, it learns from past trials and focuses the search on weight combinations that produced higher Sharpe ratios. This makes it more adaptive and efficient than a basic Monte Carlo search, which simply tries random combinations without learning from previous results.
+                        O sampler TPE evita esses problemas ao não depender de inversão de matriz nem de estimativas precisas de retornos; ao invés disso, ele aprende com testes anteriores e concentra a busca em combinações de pesos que produziram maiores Sharpe Ratios.
                     </span>
                 </div>
             </div>
 
-            <p style="margin-bottom: 1rem; text-align: justify; line-height: 1.8;">
-                <strong>Rolling Window Approach:</strong> 
-                        The model uses a 60-day rolling window. For each day T, the optimizer looks at the past 60 days of realized returns for the assets selected by the Alpha Model. 
-                        Using this rolling history, the TPE sampler searches for the combination of portfolio weights that maximizes the Sharpe ratio. Once the optimal weights are found for window [𝑇-60,𝑇1–1]
-                        , they are applied to rebalance the portfolio on day T.
+            <p style="margin-bottom: 1rem; text-align: justify; line-height: 1.8%;">
+                    <div class="Janela Móvel">
+
+                    <strong>Rolling Window:</strong> 
+                    O modelo utiliza uma janela móvel de 60 dias. Para cada dia T, o otimizador observa os retornos realizados nos últimos 60 dias para os ativos selecionados, busca a combinação de pesos que maximiza o Sharpe Ratio e aplica esses pesos no dia T.
             </p>
+            <p style="margin-bottom: 1rem; text-align: justify; line-height: 1.8%;">
 
             <div class="example-box">
-                <strong>Example:</strong> 
-                On date T, the optimizer uses historical returns from [T–60, T–1] to compute the risk-return tradeoff and derive the optimal allocation. These weights are then implemented on day T to adjust position sizes in line with the day signal outputs.
+                <strong>Exemplo:</strong> 
+                Na data T, o otimizador utiliza retornos de [T–60, T–1] para calcular o tradeoff risco-retorno e deriva a alocação ótima. Esses pesos são implementados no dia T.
             </div>
         </div>
+        <p style="margin-bottom: 1rem; text-align: justify; line-height: 1.8%;">
+
+        <!-- Fund Profile -->
+        <div class="section">
+            <div class="section-title">VII. Enquadramento e Perfil de Risco</div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Enquadramento</strong></td>
+                        <td>
+                            Alocação focada em renda variável, com alvo estrutural de aproximadamente
+                            <strong>67% de exposição em ações brasileiras</strong>, complementada por
+                            caixa/CDI. A exposição líquida em renda variável não excede 100% do patrimônio.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estrutura Long-Only</strong></td>
+                        <td>
+                            A estratégia mantém exclusivamente <strong>posições compradas</strong> em ações e instrumentos de caixa,
+                            sem vendas a descoberto e sem uso de derivativos para alavancagem.
+                            Os pesos são rebalanceados sistematicamente com base nos sinais diários do modelo de Machine Learning.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perfil de Risco</strong></td>
+                        <td>
+                            Compatível com uma <strong>estratégia de ações de alto risco</strong>, sujeita a volatilidade relevante
+                            e ciclos de drawdown. No período de backtest, a estratégia exibiu
+                            volatilidade anualizada de aproximadamente <strong>13.2%</strong> e
+                            drawdown máximo de <strong>-6.0%</strong>, conforme detalhes nas Seções I, IV e V.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <div class="footer">
-            Generated on 12/11/2025 22:23 | Author: Sergio Pimentel
+            Gerado em 12/11/2025 22:55 | Autor: Sergio Pimentel
         </div>
     </div>
 
@@ -315,14 +352,12 @@ The model integrates momentum, risk, oscillator, mean-reversion, and price conve
         const rawDates = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284];
         let dates;
         
-        // Verificar se temos datas ou índices numéricos
         if (typeof rawDates[0] === 'string' && rawDates[0].includes('-')) {
             dates = rawDates.map(d => {
                 const date = new Date(d);
                 return date.toLocaleDateString('pt-BR', {month: 'short', year: '2-digit'});
             });
         } else {
-            // Usar índices numéricos
             dates = rawDates.map((d, i) => i.toString());
         }
         
@@ -332,7 +367,6 @@ The model integrates momentum, risk, oscillator, mean-reversion, and price conve
         const peakReturns = [-0.14403570137861976, -0.14403570137861976, 0.6041247017756657, 0.8895379638526046, 2.0147564604694246, 2.391282113698745, 2.6993708459966292, 2.832723922001823, 3.77690882081283, 3.77690882081283, 3.77690882081283, 3.77690882081283, 7.1692800243372545, 7.1692800243372545, 7.448204056167085, 7.800388184233853, 7.800388184233853, 7.859629841362348, 7.859629841362348, 7.859629841362348, 8.108579164420693, 8.425153374304518, 8.425153374304518, 8.425153374304518, 8.425153374304518, 8.425153374304518, 9.38309097573795, 9.606916694234325, 9.673773588474255, 9.673773588474255, 9.673773588474255, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.23448540958556, 10.586371459364297, 11.492653529437046, 12.272065117425758, 12.272065117425758, 12.272065117425758, 12.272065117425758, 12.272065117425758, 12.272065117425758, 12.916885808808477, 12.916885808808477, 12.916885808808477, 12.916885808808477, 12.916885808808477, 12.916885808808477, 12.916885808808477, 13.126176482864027, 13.126176482864027, 13.14734961458739, 15.26334492113477, 15.560075764682546, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.761163352943841, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 15.765180732976326, 16.059851675427804, 16.059851675427804, 16.093024472485173, 16.093024472485173, 16.690492339084862, 17.222168830406325, 17.766027897072178, 20.396841049807545, 21.83420320301852, 25.67089867412422, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 25.890885249294683, 26.540162926623225, 26.540162926623225, 26.540162926623225, 26.911183911661894, 27.396627080118453, 27.396627080118453, 27.920014371543857, 27.920014371543857, 27.920014371543857, 31.324963108145543, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.56632141317901, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.61034897585016, 32.822168521634644, 32.822168521634644, 36.74342547754923, 37.588566601718924, 37.588566601718924, 37.588566601718924, 38.71186469100421, 39.36650694732238, 39.701423331619814, 39.7789247508707, 40.276336235709124, 40.276336235709124, 40.276336235709124, 40.39871299646845, 40.39871299646845, 41.2568372662004, 42.87973276078427, 44.2383614546463, 45.25438625164677, 45.61097281207525, 45.61097281207525, 46.01101968485437, 46.01101968485437, 46.01101968485437, 46.01101968485437, 46.01101968485437, 46.7163949278324, 46.7163949278324, 46.7163949278324, 46.7163949278324, 46.7163949278324, 46.7163949278324, 46.7163949278324, 46.7163949278324, 46.990039741625566, 47.82157693721185, 49.9013989367219, 49.97765324486132, 50.33906252744256, 50.702138650519714, 50.702138650519714, 50.702138650519714, 50.702138650519714, 50.702138650519714, 50.702138650519714, 50.702138650519714, 50.871268449189635];
         const drawdownData = [0.0, -0.19603426421264114, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.8464367448212218, -0.7646248471545158, -0.12424932421272183, 0.0, -0.24415033652340767, 0.0, 0.0, -0.37287919321734586, 0.0, -0.0876982038562013, -0.25642566760347707, 0.0, 0.0, -0.40332187137333, -0.24998925008784534, -0.007555157152772107, -0.37228180408764855, 0.0, 0.0, 0.0, -0.22127238781263214, -0.3545055729156754, 0.0, -0.5188027453122968, -2.725522413424497, -2.683011515156275, -4.5677630433257566, -4.512004314228546, -4.3751649386526985, -4.834972562749618, -5.161537795128124, -4.979446831327783, -4.820051168062179, -6.005513281150243, -4.984837502176875, -5.572538838038765, -5.1027621207353935, -5.173575819482368, -5.50297863396545, -5.324714130421803, -5.482088955173248, -4.945916916599091, -4.934684447773563, -4.095027412558238, -4.236910102721836, -3.4893723193191284, -2.231986847774048, -2.2251177779338605, -3.4612697106205292, -3.0613495360267473, -2.7396019066805666, -2.3316845617245785, -2.7380614267422665, -1.868753552372504, -1.9754686459382054, -2.7728248893070573, -2.2980062232745624, -0.7960267331563409, -0.7781482641703752, -0.7707312790855125, 0.0, 0.0, 0.0, -0.9752216778660783, -0.6827409200783507, -0.7295999359959504, -0.7924100832638059, -0.7550868295464253, 0.0, -0.7236231142555005, -0.23718169458588623, -0.9202615650896417, -1.3550549669524736, -0.13515930383924957, -0.07280270059232263, 0.0, -0.027138166727469493, 0.0, 0.0, 0.0, 0.0, -0.28602053293248497, -0.41463156005080437, -0.20461882135234255, -0.13195246343113975, -0.14106221982296274, -0.29824089371335294, -1.10760317245997, -2.045984159164682, -2.1434510404094054, -0.4181305825969317, 0.0, -0.30857796290255646, -1.7075634650798532, -1.659018585067884, -1.656405071551914, -1.3080832637306194, -1.023663427269117, -0.9747807812352072, -2.0973355945059224, -2.011930474679635, -1.986663978384684, -2.03470023706831, -2.4336974635975728, -3.3224008871306165, -2.8914638996435538, -2.8528429019759827, -3.11255054450833, -2.240366012168149, -2.08889833362772, -2.457647899389792, -2.3352523151380478, -2.2836085674303397, -2.296512738087275, -2.120064560964263, -1.6571953230121061, -0.6673341335472704, -0.19031806022127284, -0.582178533402411, -1.3741275809457942, -1.250518276371415, -1.0015006659055081, -0.8970822467742501, -2.4184190459026977, -4.123171665821912, -3.792240181985962, -4.811926310752246, -5.45123995003256, -4.949984292535392, -3.9807641918760184, -3.640128295522882, -3.9579975468522766, -3.1985242948046833, -3.3844436009291545, -2.4522143263041696, -1.3654255576459495, -1.8234288239254992, 0.0, -0.03767253886175492, 0.0, -0.47257503413845603, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -2.4163130386577247, -2.2225650152776666, -3.1365608563993397, -3.6841969937403407, -3.6315966294222735, -4.277656716621436, -3.9275294535875416, -4.036616720889008, -2.9550323248431765, -2.008864439386282, -1.8887702922859684, -2.1443860897656264, -1.1672551968834544, 0.0, -1.0033277329751789, -0.5642608559795703, 0.0, 0.0, -0.21072842330601693, 0.0, -0.21965879069126837, -0.8811710447834131, 0.0, 0.0, -0.7340674806224912, -0.49267726055124417, -1.4706660478216005, -1.349536626186798, -1.1607953491787226, -0.9527325103180551, -0.1688159098470754, -0.5169231950845399, -0.8324761418888937, -0.777461499522969, -0.37279016940395815, 0.0, -0.26881772192653974, -0.34175274505252595, -0.003976963163843106, -0.42000486855962027, -2.250346981087248, -2.8737512117929076, -2.977259269496202, -0.5293243927958047, -1.2301110730443598, -0.9465040677046677, -2.4024329901533803, -2.1622404620939117, -1.701908507272909, -2.1004483329903456, -2.72294982723027, -1.8350313832214749, -1.5721869638401276, -1.0836248517546054, -1.3589990804163676, -4.32104987203793, -3.1642019521318843, -2.733701385726006, -2.6954205290013022, -1.7861551257921326, -0.7421917014323265, -0.7312919825130826, -0.9041181945148469, -0.4043818814253086, -1.0160811272840409, -2.6465536029561365, -2.613383570466299, -2.0546533564248626, -3.253634669715766, -3.102184527833174, -3.532853757196164, -2.918860911292409, -2.3869843224335163, -2.5584334589517588, -2.6493745061529683, -1.8553277664735912, -2.27225150219591, -1.9581872861865746, -1.9266542623595728, -2.441092004080847, -1.8574519848042814, 0.0, -0.006457722069341809, 0.0, 0.0, -0.10217294738612548, -0.7246652364208073, 0.0, 0.0, 0.0, 0.0, 0.0, -0.37458062092599054, -0.31931195428531733, 0.0, -0.25155603398203663, 0.0, 0.0, 0.0, 0.0, 0.0, -0.07237277844779344, 0.0, -1.1246764148113098, -1.042635668789904, -0.5425705811377246, -0.3531009818828368, 0.0, -0.46682831701000405, -0.6969404610186802, -0.46479565511857723, -1.1747136391064616, -1.224176704967761, -1.5426102015973497, -1.0083955172514814, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.2708666981389616, -0.9108980069038597, -1.0584720867162556, -1.0035828189245533, -0.634114982871592, -1.0920000260246199, 0.0];
 
-        // Performance Chart COM SOMBRA DE DRAWDOWN
         const ctx1 = document.getElementById('performanceChart').getContext('2d');
         new Chart(ctx1, {
             type: 'line',
@@ -358,11 +392,11 @@ The model integrates momentum, risk, oscillator, mean-reversion, and price conve
                         borderWidth: 0,
                         pointRadius: 0,
                         tension: 0.1,
-                        fill: '-1',  // Preencher até o dataset anterior (pico)
+                        fill: '-1',
                         order: 2
                     },
                     {
-                        label: 'Portfolio',
+                        label: 'Portfólio',
                         data: modelReturns,
                         borderColor: '#2c3e50',
                         backgroundColor: 'rgba(44, 62, 80, 0.1)',
@@ -405,7 +439,6 @@ The model integrates momentum, risk, oscillator, mean-reversion, and price conve
                             font: { size: 11 },
                             usePointStyle: true,
                             filter: function(item) {
-                                // Não mostrar "Pico" na legenda
                                 return item.text !== 'Pico';
                             }
                         }
@@ -415,7 +448,7 @@ The model integrates momentum, risk, oscillator, mean-reversion, and price conve
                     y: {
                         title: {
                             display: true,
-                            text: 'Cumulative Return (%)',
+                            text: 'Retorno Acumulado (%)',
                             font: { size: 11 }
                         },
                         grid: { color: '#f0f0f0' }
@@ -428,7 +461,6 @@ The model integrates momentum, risk, oscillator, mean-reversion, and price conve
             }
         });
 
-        // Drawdown Chart
         const ctx2 = document.getElementById('drawdownChart').getContext('2d');
         new Chart(ctx2, {
             type: 'line',
