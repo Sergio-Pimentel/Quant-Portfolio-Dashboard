@@ -277,7 +277,7 @@
                     <strong>2. Otimização do Portfólio (Alocação de Pesos)</strong><br>
                     <span style="margin-left: 1.5rem; display: block; margin-top: 0.5rem; text-align: justify;">
                         Os pesos diários do portfólio são tratados como hiperparâmetros e otimizados pela maximização do Sharpe Ratio.
-                        Para explorar o espaço de pesos de forma eficiente, é utilizado um sampler Tree-structured Parzen Estimator (TPE), enquanto uma regularização L2 penaliza alocações de baixo impacto e promove parcimônia na carteira final.
+                        Para explorar o espaço de pesos de forma eficiente, é utilizado um sampler Tree-structured Parzen Estimator (TPE), enquanto uma regularização L1 penaliza alocações de baixo impacto e promove parcimônia na carteira final.
                     </span>
                     <span style="margin-left: 1.5rem; display: block; margin-top: 0.75rem; text-align: justify;">
                         Essa abordagem é mais robusta do que o método tradicional de Markowitz, que depende fortemente de estimativas de retornos esperados e da matriz de covariância, ambas suscetíveis a ruído e instabilidade.
@@ -504,3 +504,4 @@
     </script>
 </body>
 </html>
+
